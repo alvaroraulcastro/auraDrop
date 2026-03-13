@@ -10,13 +10,13 @@ export default function Home() {
     <>
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>Gotas para tu bienestar</h1>
+          <h1 className={styles.heroTitle}>Aceite CBD para masaje</h1>
           <p className={styles.heroSubtitle}>
-            Alivio del estrés, meditación y cuidado personal. Productos naturales
-            para acompañarte en el día a día.
+            10 ml. Cepa Y griega de Medical Seeds. Para solicitar tu compra,
+            escríbenos desde la sección Contacto y te responderemos a la brevedad.
           </p>
           <Link href="/productos" className={styles.heroCta}>
-            Ver productos
+            Ver producto
           </Link>
         </div>
       </section>
@@ -28,17 +28,17 @@ export default function Home() {
             <div className={styles.benefitCard}>
               <span className={styles.benefitIcon} aria-hidden>♥</span>
               <h3>Ingredientes naturales</h3>
-              <p>Formulaciones pensadas para el bienestar sin comprometer tu salud.</p>
+              <p>Elaborado con cannabis de calidad para uso en masaje y bienestar.</p>
             </div>
             <div className={styles.benefitCard}>
               <span className={styles.benefitIcon} aria-hidden>⚡</span>
               <h3>Fácil de usar</h3>
-              <p>Gotas listas para tomar. Ideal para integrar en tu rutina de autocuidado.</p>
+              <p>Formato 10 ml listo para aplicar. Incluye modo de uso.</p>
             </div>
             <div className={styles.benefitCard}>
               <span className={styles.benefitIcon} aria-hidden>🛡</span>
               <h3>Calidad y confianza</h3>
-              <p>Productos elaborados con estándares de calidad y trazabilidad.</p>
+              <p>Cepa Y griega de Medical Seeds. Uso externo.</p>
             </div>
           </div>
         </div>
@@ -46,16 +46,18 @@ export default function Home() {
 
       <section className={styles.featured}>
         <div className={styles.sectionInner}>
-          <h2 className={styles.sectionTitle}>Productos destacados</h2>
+          <h2 className={styles.sectionTitle}>Nuestro producto</h2>
           <div className={styles.featuredGrid}>
             {destacados.map((p) => (
               <ProductCard key={p.id} producto={p} featured />
             ))}
           </div>
           <div className={styles.ctaWrap}>
-            <Link href="/productos" className={styles.ctaSecondary}>
-              Ver todos los productos
-            </Link>
+            <p className={styles.ctaText}>
+              Para comprar, añade el producto al carrito y completa la solicitud, o
+              escríbenos por <Link href="/contacto">Contacto</Link>. Te responderemos
+              para coordinar el envío.
+            </p>
           </div>
         </div>
       </section>
