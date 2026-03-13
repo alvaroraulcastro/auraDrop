@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 import type { Producto } from "@/lib/data/productos";
+import { formatearPrecio } from "@/lib/data/productos";
 import { useCart } from "@/lib/context/CartContext";
 import styles from "./ProductCard.module.css";
 
@@ -61,7 +62,9 @@ export function ProductCard({ producto, featured }: ProductCardProps) {
         </Paragraph>
       </Link>
       <div className={styles.price}>
-        <Typography.Text strong>{producto.precio.toFixed(2)} €</Typography.Text>
+        <Typography.Text strong>
+          {formatearPrecio(producto.precio, producto.moneda)}
+        </Typography.Text>
       </div>
       {!featured && (
         <Button

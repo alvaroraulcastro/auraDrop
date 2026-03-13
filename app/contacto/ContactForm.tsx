@@ -19,12 +19,26 @@ export function ContactForm() {
   const onFinish = async (values: FormValues) => {
     setLoading(true);
     try {
-      // Simular envío; en producción podría llamar a una API o enviar por email
-      await new Promise((r) => setTimeout(r, 800));
+      const res = await fetch("/api/contacto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: values.nombre,
+          email: values.email,
+          asunto: values.asunto,
+          mensaje: values.mensaje,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || "Error al enviar");
+      }
       message.success("Mensaje enviado. Te responderemos pronto.");
       form.resetFields();
-    } catch {
-      message.error("Error al enviar. Inténtalo de nuevo.");
+    } catch (e) {
+      message.error(
+        e instanceof Error ? e.message : "Error al enviar. Inténtalo de nuevo."
+      );
     } finally {
       setLoading(false);
     }

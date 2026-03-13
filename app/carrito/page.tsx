@@ -2,6 +2,7 @@
 
 import { Typography, Table, Button, InputNumber, Form, Input, Space } from "antd";
 import { useCart } from "@/lib/context/CartContext";
+import { formatearPrecio } from "@/lib/data/productos";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -29,8 +30,8 @@ export default function CarritoPage() {
       title: "Precio unit.",
       key: "precio",
       width: 100,
-      render: (_: unknown, record: { producto: { precio: number } }) =>
-        `${record.producto.precio.toFixed(2)} €`,
+      render: (_: unknown, record: { producto: { precio: number; moneda?: string } }) =>
+        formatearPrecio(record.producto.precio, record.producto.moneda),
     },
     {
       title: "Cantidad",
@@ -49,8 +50,8 @@ export default function CarritoPage() {
       title: "Subtotal",
       key: "subtotal",
       width: 100,
-      render: (_: unknown, record: { producto: { precio: number }; cantidad: number }) =>
-        `${(record.producto.precio * record.cantidad).toFixed(2)} €`,
+      render: (_: unknown, record: { producto: { precio: number; moneda?: string }; cantidad: number }) =>
+        formatearPrecio(record.producto.precio * record.cantidad, record.producto.moneda),
     },
     {
       title: "",
@@ -74,12 +75,36 @@ export default function CarritoPage() {
   const onFinish = async (values: Record<string, string>) => {
     setLoading(true);
     try {
-      await new Promise((r) => setTimeout(r, 1000));
+      const res = await fetch("/api/pedido", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: values.nombre,
+          email: values.email,
+          telefono: values.telefono,
+          direccion: values.direccion,
+          comentarios: values.comentarios,
+          lineas: items.map((i) => ({
+            nombre: i.producto.nombre,
+            cantidad: i.cantidad,
+            precio: i.producto.precio,
+          })),
+          total,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || "Error al enviar");
+      }
       message.success(
-        "Solicitud recibida. Te contactaremos para confirmar el pedido y el método de pago."
+        "Solicitud enviada. Te contactaremos a la brevedad para confirmar el pedido."
       );
       form.resetFields();
       router.push("/");
+    } catch (e) {
+      message.error(
+        e instanceof Error ? e.message : "Error al enviar. Inténtalo de nuevo."
+      );
     } finally {
       setLoading(false);
     }
@@ -90,7 +115,7 @@ export default function CarritoPage() {
       <div className={styles.wrap}>
         <Title level={2}>Tu carrito está vacío</Title>
         <p className={styles.emptyText}>
-          <Link href="/productos">Ver productos</Link> para añadir gotas al carrito.
+          <Link href="/productos">Ver producto</Link> para solicitar compra.
         </p>
       </div>
     );
@@ -112,7 +137,7 @@ export default function CarritoPage() {
       />
 
       <div className={styles.total}>
-        <Text strong>Total: {total.toFixed(2)} €</Text>
+        <Text strong>Total: {formatearPrecio(total, "CLP")}</Text>
       </div>
 
       <div className={styles.formSection}>
@@ -145,7 +170,7 @@ export default function CarritoPage() {
             label="Teléfono"
             rules={[{ required: true, message: "Introduce tu teléfono" }]}
           >
-            <Input placeholder="+34 600 000 000" size="large" />
+            <Input placeholder="+56 9 0000 0000" size="large" />
           </Form.Item>
           <Form.Item
             name="direccion"

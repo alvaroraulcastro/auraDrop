@@ -2,6 +2,7 @@
 
 import { Drawer, Table, Button, InputNumber, Space, Typography } from "antd";
 import { useCart } from "@/lib/context/CartContext";
+import { formatearPrecio } from "@/lib/data/productos";
 import Link from "next/link";
 import styles from "./CartDrawer.module.css";
 
@@ -24,7 +25,8 @@ export function CartDrawer() {
       dataIndex: "precio",
       key: "precio",
       width: 90,
-      render: (precio: number) => `${precio.toFixed(2)} €`,
+      render: (_: unknown, record: { producto: { precio: number; moneda?: string } }) =>
+        formatearPrecio(record.producto.precio, record.producto.moneda),
     },
     {
       title: "Cantidad",
@@ -80,7 +82,7 @@ export function CartDrawer() {
         items.length > 0 ? (
           <Space direction="vertical" style={{ width: "100%" }} size="middle">
             <Typography.Text strong>
-              Total: {total.toFixed(2)} €
+              Total: {formatearPrecio(total, "CLP")}
             </Typography.Text>
             <Link href="/carrito" onClick={closeCart}>
               <Button type="primary" block>

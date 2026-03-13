@@ -25,7 +25,7 @@ export default function ProductosPage() {
       <div className={styles.header}>
         <Title level={1}>Productos</Title>
         <p className={styles.subtitle}>
-          Gotas para estrés, meditación y cuidado personal.
+          Aceite CBD para masaje, 10 ml. Cepa Y griega de Medical Seeds.
         </p>
         <Space wrap size="middle" className={styles.filters}>
           <Select
