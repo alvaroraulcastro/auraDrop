@@ -1,0 +1,21 @@
+.wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.wrap h1 {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+}
+
+.wrap h2 {
+  font-size: 1.25rem;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.wrap p {
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.85);
+}

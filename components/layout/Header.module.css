@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 24px;
+  background: var(--header-bg, #001529);
+  color: #fff;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff !important;
+  margin-right: 24px;
+}
+
+.logo:hover {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.menu {
+  flex: 1;
+  min-width: 0;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.85);
+  border: none;
+  line-height: 64px;
+}
+
+.menu :global(.ant-menu-item) {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.menu :global(.ant-menu-item-selected) {
+  color: #fff !important;
+}
+
+.menu :global(.ant-menu-item:hover) {
+  color: #fff !important;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actions :global(.ant-btn) {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.actions :global(.ant-btn:hover) {
+  color: #fff;
+}
+
+.actions :global(.ant-badge) {
+  color: rgba(255, 255, 255, 0.85);
+}

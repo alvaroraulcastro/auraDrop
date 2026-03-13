@@ -1,0 +1,38 @@
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.emptyText {
+  margin-top: 16px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.emptyText a {
+  color: #0d9488;
+  font-weight: 500;
+}
+
+.subtitle {
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 32px;
+}
+
+.table {
+  margin-bottom: 24px;
+}
+
+.total {
+  font-size: 1.125rem;
+  margin-bottom: 40px;
+}
+
+.formSection {
+  padding-top: 32px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.formSection h4 {
+  margin-bottom: 24px !important;
+}

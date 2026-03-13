@@ -2,6 +2,9 @@
 
 Web enfocada en ventas de gotas para alivio del estrés, meditación y cuidado personal.
 
+# Dominio actual
+https://aura-drop.vercel.app/
+
 ---
 
 ## 1. Stack técnico
@@ -25,31 +28,31 @@ Web enfocada en ventas de gotas para alivio del estrés, meditación y cuidado p
 - [x] Configurar ESLint, Prettier y `.env.example`
 - [x] Repo listo para conectar con Vercel (push a `main`)
 
-### Fase 1 — Base y diseño
-- [ ] Layout principal (header, footer, navegación) con componentes Ant Design
-- [ ] Tema/estilo de marca (colores, tipografía) vía Ant Design ConfigProvider
-- [ ] Página de inicio con secciones: hero, beneficios, productos destacados
-- [ ] Páginas estáticas: Quiénes somos, Contacto, Aviso legal / Privacidad
+### Fase 1 — Base y diseño ✅
+- [x] Layout principal (header, footer, navegación) con componentes Ant Design
+- [x] Tema/estilo de marca (colores, tipografía) vía Ant Design ConfigProvider
+- [x] Página de inicio con secciones: hero, beneficios, productos destacados
+- [x] Páginas estáticas: Quiénes somos, Contacto, Aviso legal / Privacidad
 
-### Fase 2 — Catálogo y producto
-- [ ] Listado de productos (gotas) con grid/cards Ant Design
-- [ ] Filtros y ordenación (categoría: estrés, meditación, cuidado personal)
-- [ ] Página de detalle de producto (descripción, uso, precio, CTA)
-- [ ] Integración con datos (JSON, CMS o API según decisión)
+### Fase 2 — Catálogo y producto ✅
+- [x] Listado de productos (gotas) con grid/cards Ant Design
+- [x] Filtros y ordenación (categoría: estrés, meditación, cuidado personal)
+- [x] Página de detalle de producto (descripción, uso, precio, CTA)
+- [x] Integración con datos (lib/data/productos.ts)
 
-### Fase 3 — Carrito y checkout (si aplica)
-- [ ] Carrito lateral o página con componentes Ant Design (Table, InputNumber, Button)
-- [ ] Resumen de pedido y formulario de datos
-- [ ] Integración con pasarela de pago o formulario de solicitud (según modelo de negocio)
+### Fase 3 — Carrito y checkout ✅
+- [x] Carrito lateral (Drawer) y página con Table, InputNumber, Button
+- [x] Resumen de pedido y formulario de datos (nombre, email, teléfono, dirección)
+- [x] Formulario de solicitud de pedido (sin pasarela; confirmación por contacto)
 
-### Fase 4 — Contenido y SEO
-- [ ] Metadata y Open Graph por página (Next.js Metadata API)
-- [ ] Sitemap y `robots.txt`
-- [ ] Contenido de meditación/cuidado personal (blog o sección de recursos opcional)
+### Fase 4 — Contenido y SEO ✅
+- [x] Metadata y Open Graph por página (Next.js Metadata API)
+- [x] Sitemap (`app/sitemap.ts`) y `robots.txt` (`app/robots.ts`)
+- [x] Sección Recursos (meditación, respiración, cuidado personal)
 
-### Fase 5 — Despliegue y operación
-- [ ] Conectar repositorio Git con Vercel
-- [ ] Variables de entorno en Vercel (API keys, URLs)
+### Fase 5 — Despliegue y operación ✅
+- [x] Conectar repositorio Git con Vercel
+- [ ] Variables de entorno en Vercel (opcional: NEXT_PUBLIC_SITE_URL)
 - [ ] Dominio personalizado (si aplica)
 - [ ] Monitoreo básico (Vercel Analytics opcional)
 
