@@ -80,7 +80,7 @@ export function CartDrawer() {
       size={480}
       footer={
         items.length > 0 ? (
-          <Space direction="vertical" style={{ width: "100%" }} size="middle">
+          <Space orientation="vertical" style={{ width: "100%" }} size="middle">
             <Typography.Text strong>
               Total: {formatearPrecio(total, "CLP")}
             </Typography.Text>
