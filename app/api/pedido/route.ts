@@ -59,6 +59,8 @@ export async function POST(request: Request) {
       <p><strong>Teléfono:</strong> ${escapeHtml(telefono || "—")}</p>
       <p><strong>Dirección de envío:</strong></p>
       <p>${escapeHtml(direccion || "—").replace(/\n/g, "<br>")}</p>
+      <p><strong>Envío:</strong> Se realiza por Bluexpress (costo adicional). Si el destinatario está en Santiago, se puede coordinar entrega dentro del Metro.</p>
+      <p><strong>Nota:</strong> No contamos con tienda física; sólo realizamos envíos.</p>
       ${comentarios?.trim() ? `<p><strong>Comentarios:</strong> ${escapeHtml(comentarios)}</p>` : ""}
       ${lineasHtml ? `<h3>Resumen del pedido</h3><table border="1" cellpadding="8" cellspacing="0"><thead><tr><th>Producto</th><th>Cant.</th><th>P. unit.</th><th>Subtotal</th></tr></thead><tbody>${lineasHtml}</tbody></table><p><strong>Total: $${Number(total ?? 0).toLocaleString("es-CL")} CLP</strong></p>` : ""}
     `;

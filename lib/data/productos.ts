@@ -17,6 +17,8 @@ export interface Producto {
   imagen: string;
   uso?: string;
   cepa?: string;
+  especificaciones?: string[];
+  beneficios?: string[];
   destacado?: boolean;
 }
 
@@ -28,14 +30,25 @@ export const productos: Producto[] = [
     nombre: "Aceite CBD para masaje",
     descripcionCorta: "Aceite de CBD para masaje, 10 ml. Cepa Y griega de Medical Seeds.",
     descripcion:
-      "Aceite de CBD para uso en masaje, formato 10 ml. Elaborado con cannabis de la cepa Y griega de Medical Seeds. Ideal para aplicar sobre la piel en zonas de tensión o como apoyo en masajes de bienestar. Uso externo únicamente.",
+      "Aceite de CBD de uso tópico (10 ml) formulado para masajes terapéuticos y cuidado de la piel. Extraído de la cepa Y griega de Medical Seeds y diseñado para apoyar una sensación de alivio muscular localizada y bienestar general. Uso externo únicamente.",
     categoria: "cuidado-personal",
     precio: 9000,
     moneda: "CLP",
-    imagen: "https://placehold.co/400x400/e8f5e9/2e7d32?text=CBD+10ml",
+    imagen: "/imagenes/aceiteCbdMasaje.jpeg",
     cepa: "Y griega (Medical Seeds)",
     uso:
       "Aplicar unas gotas sobre la zona a masajear y masajear suavemente con movimientos circulares. Uso externo únicamente. No ingerir. Evitar contacto con ojos y mucosas. Conservar en lugar fresco y seco, protegido de la luz directa.",
+    especificaciones: [
+      "Contenido: 10 ml",
+      "Concentración aproximada de CBD: 10%",
+      "Formato: aceite de uso tópico",
+      "Libre de THC detectable (<0.2%)",
+    ],
+    beneficios: [
+      "Apoya el alivio de la tensión muscular localizada",
+      "Contribuye a una sensación de relajación y bienestar durante el masaje",
+      "Complementa rutinas de autocuidado y terapias de masaje",
+    ],
     destacado: true,
   },
 ];
