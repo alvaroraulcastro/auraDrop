@@ -8,7 +8,8 @@ function getResend() {
 }
 
 export async function POST(request: Request) {
-  const destinatario = process.env.CONTACTO_EMAIL;
+  const destinatario =
+    process.env.RESEND_TEST_EMAIL ?? process.env.CONTACTO_EMAIL;
   if (!destinatario) {
     return NextResponse.json(
       { error: "Servicio de contacto no configurado." },
@@ -41,8 +42,11 @@ export async function POST(request: Request) {
       <p>${escapeHtml(mensaje).replace(/\n/g, "<br>")}</p>
     `;
 
+    const from =
+      process.env.RESEND_FROM ?? process.env.RESEND_TEST_EMAIL ?? "onboarding@resend.dev";
+
     const payload = {
-      from: process.env.RESEND_FROM ?? "onboarding@resend.dev",
+      from,
       to: destinatario,
       replyTo: email,
       subject,
@@ -53,8 +57,12 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend error:", error);
+      const message =
+        typeof error === "string"
+          ? error
+          : error?.message ?? JSON.stringify(error);
       return NextResponse.json(
-        { error: "No se pudo enviar el mensaje." },
+        { error: `No se pudo enviar el mensaje. ${message}` },
         { status: 500 }
       );
     }
