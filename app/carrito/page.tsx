@@ -128,6 +128,10 @@ export default function CarritoPage() {
         Revisa tu carrito y completa tus datos. Nos pondremos en contacto para
         confirmar el pedido.
       </p>
+      <p className={styles.note}>
+        Envíos por Bluexpress (coste de envío no incluido). Si estás en Santiago,
+        también podemos coordinar entrega dentro del Metro. No contamos con tienda física.
+      </p>
 
       <Table
         dataSource={dataSource}
