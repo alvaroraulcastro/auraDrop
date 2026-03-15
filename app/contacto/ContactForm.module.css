@@ -1,0 +1,19 @@
+.wrapper {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  background: rgba(240, 253, 250, 0.6);
+}
+
+.whatsappCard {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.whatsappCard p {
+  margin: 0;
+  font-size: 1rem;
+}
