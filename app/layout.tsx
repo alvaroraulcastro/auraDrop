@@ -20,19 +20,72 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://aura-drop.vercel.ap
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "auraDrop — Gotas para estrés, meditación y cuidado personal",
+    default: "auraDrop — Aceite CBD para estrés, meditación y bienestar en Chile",
     template: "%s | auraDrop",
   },
   description:
-    "Web enfocada en ventas de gotas para alivio del estrés, meditación y cuidado personal.",
+    "Especialistas en aceite de CBD para alivio del estrés, meditación y cuidado personal en Chile. Productos naturales para tu bienestar emocional y físico.",
+  keywords: [
+    "CBD Chile",
+    "aceite de CBD",
+    "bienestar natural",
+    "estrés",
+    "meditación",
+    "cuidado personal",
+    "aceite para masajes",
+    "relajación",
+    "salud natural",
+  ],
+  authors: [{ name: "auraDrop" }],
+  creator: "auraDrop",
+  publisher: "auraDrop",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "./",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     type: "website",
-    locale: "es_ES",
+    locale: "es_CL",
     url: siteUrl,
     siteName: "auraDrop",
-    title: "auraDrop — Gotas para estrés, meditación y cuidado personal",
+    title: "auraDrop — Aceite CBD para estrés, meditación y bienestar en Chile",
     description:
-      "Gotas naturales para alivio del estrés, meditación y cuidado personal.",
+      "Descubre el poder del CBD natural para el alivio del estrés y la meditación. Aceites de calidad para masajes y bienestar en Chile.",
+    images: [
+      {
+        url: "/imagenes/aceiteCbdMasaje.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "auraDrop - Aceite CBD para bienestar",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "auraDrop — Aceite CBD para estrés y meditación",
+    description:
+      "Aceites naturales de CBD en Chile para tu bienestar diario y alivio del estrés.",
+    images: ["/imagenes/aceiteCbdMasaje.jpeg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 

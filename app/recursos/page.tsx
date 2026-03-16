@@ -2,9 +2,21 @@ import type { Metadata } from "next";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Recursos",
+  title: "Recursos y Consejos de Bienestar",
   description:
-    "Consejos de meditación, respiración y cuidado personal para acompañar el uso de nuestras gotas.",
+    "Aprende técnicas de meditación, respiración y rutinas de autocuidado para potenciar los beneficios del aceite CBD. Guía completa de bienestar natural.",
+  keywords: [
+    "consejos meditación",
+    "respiración consciente",
+    "rutina de sueño natural",
+    "beneficios CBD meditación",
+    "autocuidado Chile",
+  ],
+  openGraph: {
+    title: "Recursos y Consejos de Bienestar | auraDrop",
+    description:
+      "Guías y consejos prácticos para mejorar tu calidad de vida y bienestar con técnicas naturales.",
+  },
 };
 
 const recursos = [
