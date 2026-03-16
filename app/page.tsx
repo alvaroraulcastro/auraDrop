@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getProductosDestacados } from "@/lib/data/productos";
 import { ProductCard } from "@/components/product/ProductCard";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "Inicio | auraDrop — Aceite CBD para masaje y bienestar en Chile",
+  description:
+    "Bienvenidos a auraDrop. Ofrecemos aceites de CBD de alta calidad formulados para masajes, alivio del estrés y meditación. Envío y coordinación por WhatsApp en Chile.",
+  keywords: [
+    "CBD Chile",
+    "aceite de CBD para masaje",
+    "alivio estrés natural",
+    "meditación Chile",
+    "bienestar personal",
+  ],
+};
 
 export default function Home() {
   const destacados = getProductosDestacados();

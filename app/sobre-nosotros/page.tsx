@@ -2,9 +2,20 @@ import type { Metadata } from "next";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Quiénes somos",
+  title: "Quiénes Somos — Nuestra Misión",
   description:
-    "Conoce auraDrop. Nuestra misión es ofrecer gotas naturales para el estrés, la meditación y el cuidado personal.",
+    "Descubre la historia de auraDrop. Nuestra misión es brindar bienestar natural a través de aceites de CBD de alta calidad en Chile para el estrés y la meditación.",
+  keywords: [
+    "historia auraDrop",
+    "CBD natural Chile",
+    "bienestar emocional",
+    "misión auraDrop",
+  ],
+  openGraph: {
+    title: "Quiénes Somos — Nuestra Misión | auraDrop",
+    description:
+      "Conoce nuestra pasión por el bienestar natural y el alivio del estrés con productos de calidad.",
+  },
 };
 
 export default function SobreNosotrosPage() {

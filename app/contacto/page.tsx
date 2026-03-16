@@ -3,9 +3,20 @@ import { Button } from "antd";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Contacto",
+  title: "Contacto — Resolvemos tus dudas",
   description:
-    "Contacto via WhatsApp para realizar pedidos o resolver dudas sobre nuestros productos.",
+    "Contáctanos para realizar tus pedidos de aceite CBD o resolver dudas sobre el uso terapéutico y bienestar natural. Atención por WhatsApp en Chile.",
+  keywords: [
+    "contacto auraDrop",
+    "comprar CBD WhatsApp",
+    "atención cliente CBD",
+    "CBD Chile contacto",
+  ],
+  openGraph: {
+    title: "Contacto — Resolvemos tus dudas | auraDrop",
+    description:
+      "Contáctanos vía WhatsApp para realizar tus pedidos de aceite CBD o resolver cualquier duda.",
+  },
 };
 
 export default function ContactoPage() {
